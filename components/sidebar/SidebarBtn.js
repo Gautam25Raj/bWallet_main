@@ -1,9 +1,9 @@
 import { Button } from "@material-tailwind/react";
 import GradientIcon from "../ui/GradientIcon";
 
-const SidebarBtn = ({ icon, label }) => {
+const SidebarBtn = ({ icon, label, onClick }) => {
   return (
-    <Button className="flex items-center gap-1.5 px-3 py-1.5">
+    <Button className="flex items-center gap-1.5 px-3 py-1.5" onClick={onClick}>
       <div className="rounded-lg bg-black p-1">
         <GradientIcon icon={icon} isHovered={true} />
       </div>

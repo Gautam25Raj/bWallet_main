@@ -12,10 +12,10 @@ export default function DashboardLayout({ children }) {
     <>
       <QrModal />
 
-      <div className="hero-bg relative flex gap-5">
+      <div className="hero-bg relative flex gap-5 bg-fixed">
         <Sidebar />
 
-        <main className="relative w-full space-y-5 bg-fixed pr-5">
+        <main className="relative w-full space-y-5 pr-5">
           <PageHeader />
           {children}
         </main>

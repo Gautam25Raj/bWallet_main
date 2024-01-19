@@ -8,6 +8,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { toggleQrCodeModal } from "@/redux/slice/modalsSlice";
 
 import Logo from "../Logo";
 import SideNav from "./SideNav";
@@ -16,10 +19,16 @@ import SideNavItem from "./SideNavItem";
 import SidebarProfile from "./SidebarProfile";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+
   const [open, setOpen] = useState(0);
 
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
+  };
+
+  const handleQRButton = () => {
+    dispatch(toggleQrCodeModal(true));
   };
 
   return (
@@ -35,6 +44,7 @@ const Sidebar = () => {
               <SidebarBtn
                 label="Open QR"
                 icon={<QrCodeIcon className="h-6 w-6 gradient-text" />}
+                onClick={handleQRButton}
               />
 
               <SidebarBtn
